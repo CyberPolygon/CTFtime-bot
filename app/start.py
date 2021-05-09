@@ -1,8 +1,8 @@
 import time
 import schedule
-from app.config import bot, CHANNEL_LOGIN
-from app.event.model import Event
-from app.utils.event_parser import CTFTimeParser
+from config import bot, CHANNEL_LOGIN
+from event.model import Event
+from utils.event_parser import CTFTimeParser
 
 
 def start_parser():

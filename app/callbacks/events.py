@@ -1,2 +1,2 @@
-from app.config import bot
+from config import bot
 

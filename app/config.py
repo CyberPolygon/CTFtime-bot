@@ -1,9 +1,8 @@
 import os
 from telebot import TeleBot
 
-ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-SQL_ROOT_PATH = os.path.join(BASE_DIR, 'app/sql')
+SQL_ROOT_PATH = os.path.join(BASE_DIR, 'sql')
 
 CHANNEL_LOGIN = os.environ.get('CHANNEL_LOGIN')
 BOT_TOKEN = os.environ.get('BOT_TOKEN')

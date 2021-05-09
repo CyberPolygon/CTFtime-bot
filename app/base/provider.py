@@ -2,8 +2,8 @@ import psycopg2
 import os
 from psycopg2.extras import RealDictCursor
 
-from app.config import DATABASE
-from app.config import SQL_ROOT_PATH
+from config import DATABASE
+from config import SQL_ROOT_PATH
 
 
 class BaseProvider:
@@ -46,7 +46,11 @@ class BaseProvider:
         Метод подключения к бд
         :return:
         """
-        config_connect = "dbname='{dbname}' user='{user}' host='{host}' password='{password}' port='{port}'"
+        config_connect = "dbname='{dbname}' user='{user}' host='{host}' password='{password}' "
+        if DATABASE.get('port'):
+            config_connect += "port='{port}'"
+        print(config_connect)
+        print(DATABASE)
         connect = psycopg2.connect(config_connect.format(**DATABASE))
         return connect, connect.cursor(cursor_factory=RealDictCursor)
 

@@ -1,4 +1,4 @@
-from app.event.provider import Provider
+from event.provider import Provider
 
 
 class Event:

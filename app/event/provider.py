@@ -1,4 +1,4 @@
-from app.base.provider import BaseProvider
+from base.provider import BaseProvider
 
 
 class Provider(BaseProvider):
