@@ -17,7 +17,7 @@ class BaseProvider:
         self.query = None
         self.connect, self.current_connect = BaseProvider.connect()
         self.sql_root = os.path.join(SQL_ROOT_PATH, module_sql_path)
-        self.is_debug = False
+        self.is_debug = True
 
     def __del__(self):
         """
@@ -49,8 +49,6 @@ class BaseProvider:
         config_connect = "dbname='{dbname}' user='{user}' host='{host}' password='{password}' "
         if DATABASE.get('port'):
             config_connect += "port='{port}'"
-        print(config_connect)
-        print(DATABASE)
         connect = psycopg2.connect(config_connect.format(**DATABASE))
         return connect, connect.cursor(cursor_factory=RealDictCursor)
 
