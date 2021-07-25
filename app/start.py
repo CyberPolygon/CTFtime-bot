@@ -12,18 +12,18 @@ def start_parser():
     events = parser.get_events()
 
     for event_data in events:
-        if event.is_exists(event_data['name']):
+        if event.is_exists(event_data):
             continue
 
         event.add(event_data)
 
-        name = event_data['name'].replace('\'', '')
-        date = event_data['date'].replace('\'', '')
-        event_format = event_data['format'].replace('\'', '')
-        location = event_data['location'].replace('\'', '')
-        weight = event_data['weight'].replace('\'', '')
-        notes = event_data['notes'].replace('\'', '')
-        url = event_data['url'].replace('\'', '')
+        name = event_data['name']
+        date = event_data['date']
+        event_format = event_data['format']
+        location = event_data['location']
+        weight = event_data['weight']
+        notes = event_data['notes']
+        url = event_data['url']
 
         msg = f"***Name:*** {name}\n" \
               f"***Date:*** {date}\n" \

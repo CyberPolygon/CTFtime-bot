@@ -10,12 +10,12 @@ insert into events
 )
 values
 (
-    {name},
-    {date},
-    {format},
-    {location},
-    {weight},
-    {notes},
-    {url}
+    %s,
+    %s,
+    %s,
+    %s,
+    %s,
+    %s,
+    %s
 )
 returning id;

@@ -8,4 +8,4 @@ select
    notes,
    url
 from events
-where name={name}
+where name=%s
